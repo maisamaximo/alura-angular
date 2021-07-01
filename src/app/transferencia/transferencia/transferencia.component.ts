@@ -11,8 +11,14 @@ export class TransferenciaComponent {
   destino: number = 0;
 
   transferir() {
-    console.log('transferencia solicitada');
     const valorEmitir = { valor: this.valor, destino: this.destino };
     this.aoTransferir.emit(valorEmitir);
+    
+    this.limpaCampos();
+  }
+
+  limpaCampos() {
+    this.valor = 0;
+    this.destino = 0;
   }
 }
