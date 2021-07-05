@@ -1,3 +1,6 @@
 <h1>Extrato da transferencia</h1>
-<p>Valor: {{ data_transferencia?.valor }}</p>
-<p>Destino: {{ data_transferencia?.destino }}</p>
+<div *ngFor="let transferencia of data_transferencias">
+  <p>Data: {{ transferencia?.date | date [ : format [ : timezone [ : locale ] ] ]  }}</p>
+  <p>Valor: {{ transferencia?.valor }}</p>
+  <p>Destino: {{ transferencia?.destino }}</p>
+</div>
