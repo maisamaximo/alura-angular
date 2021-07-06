@@ -7,12 +7,13 @@ import { TransferenciaComponent } from './transferencia/transferencia/transferen
 import { ExtratoComponent } from './transferencia/extrato/extrato.component';
 import { registerLocaleData } from '@angular/common';
 import localept from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localept, 'pt');
 
 @NgModule({
   declarations: [AppComponent, TransferenciaComponent, ExtratoComponent],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [{provide: LOCALE_ID, useValue: 'pt'}, {provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL'}],
   bootstrap: [AppComponent],
 })
