@@ -9,9 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mxbank';
 
-  constructor(private service: TransferenciaService){}
-
-    transferir($event: any) {
-    this.service.adicionar($event);
-  }
+  constructor(private service: TransferenciaService) {}
 }

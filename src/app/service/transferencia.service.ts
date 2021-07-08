@@ -4,25 +4,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TransferenciaService {
-
   private data_transferencias: any[];
-  private url = "http://localhost:3000/transferencias";
+  private url = 'http://localhost:3000/transferencias';
 
   constructor(private httpClient: HttpClient) {
-    this.data_transferencias = []
-   }
+    this.data_transferencias = [];
+  }
 
-   get transferencias() {
-    return this.data_transferencias
-   }
+  get transferencias() {
+    return this.data_transferencias;
+  }
 
-   adicionar(transferencia: any) {
-     this.dataTransferencia(transferencia)
-
-    this.data_transferencias.push(transferencia);
+  adicionar(transferencia: Transferencia): Observable<Transferencia> {
+    this.dataTransferencia(transferencia);
+    return this.httpClient.post<Transferencia>(this.url, transferencia);
   }
 
   dataTransferencia(transferencia: any) {
