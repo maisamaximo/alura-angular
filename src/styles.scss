@@ -3,7 +3,8 @@
   --secondary: #1a001a;
   --padding: 15px;
   --cinza: #340034;
-  --cinza-claro: #dedede;
+  --cinza-claro: #f2f2f2;
+  --dark-purple: #0c000a;
 }
 
 * {
@@ -11,6 +12,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: var(--dark-purple);
 }
 
 a {

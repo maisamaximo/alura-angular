@@ -1,14 +1,23 @@
 .titulo {
+  color: #a055c7;
   text-align: center;
   font-size: 24px;
   margin-bottom: 16px;
 }
 
+.container_extrato {
+  width: 500px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
 .tabela {
   text-align: center;
   margin: 0 auto;
-  background-color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.856);
 
   &__cabecalho {
     color: var(--primary);
