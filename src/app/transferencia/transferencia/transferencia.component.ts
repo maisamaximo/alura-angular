@@ -1,6 +1,7 @@
 import { Transferencia } from './../../models/transferencia/transferencia.model';
 import { TransferenciaService } from 'src/app/service/transferencia.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-transferencia',
   templateUrl: './transferencia.component.html',
@@ -12,7 +13,7 @@ export class TransferenciaComponent {
   valor: number = 0;
   destino: number = 0;
 
-  constructor(private service: TransferenciaService) {}
+  constructor(private service: TransferenciaService, private router: Router) {}
 
   transferir() {
     const valorEmitir: Transferencia = {
@@ -23,6 +24,7 @@ export class TransferenciaComponent {
       (resultado) => {
         console.log(resultado);
         this.limpaCampos();
+        this.router.navigateByUrl('extrato');
       },
       (error) => console.error()
     );

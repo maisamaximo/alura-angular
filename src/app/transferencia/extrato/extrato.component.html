@@ -1,22 +1,24 @@
-<div *ngIf="data_transferencias.length > 0; else listavazia ">
-  <h1 class="titulo">Extrato da transferencia</h1>
+<section class="container">
+  <div *ngIf="data_transferencias.length > 0; else listavazia ">
+    <h1 class="titulo">Extrato da transferencia</h1>
 
-  <table class="tabela">
-    <thead class="tabela__cabecalho">
-      <th class=”tabela__cabecalho__conteudo”>Data da transferencia</th>
-      <th class=”tabela__cabecalho__conteudo”>Valor transferencia</th>
-      <th class=”tabela__cabecalho__conteudo”>Conta de destino</th>
-    </thead>
-    <tbody class=”tabela__linha”>
-      <tr *ngFor="let transferencia of data_transferencias">
-        <td class=”tabela__conteudo”>{{ transferencia.date | date: 'short' }}</td>
-        <td class=”tabela__conteudo”>{{ transferencia.valor | currency }}</td>
-        <td class=”tabela__conteudo”>{{ transferencia.destino}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <table class="tabela">
+      <thead class="tabela__cabecalho">
+        <th class=”tabela__cabecalho__conteudo”>Data da transferencia</th>
+        <th class=”tabela__cabecalho__conteudo”>Valor transferencia</th>
+        <th class=”tabela__cabecalho__conteudo”>Conta de destino</th>
+      </thead>
+      <tbody class=”tabela__linha”>
+        <tr *ngFor="let transferencia of data_transferencias">
+          <td class=”tabela__conteudo”>{{ transferencia.data | date: 'short' }}</td>
+          <td class=”tabela__conteudo”>{{ transferencia.valor | currency }}</td>
+          <td class=”tabela__conteudo”>{{ transferencia.destino}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<ng-template #listavazia>
-  <p class="titulo">Nenhuma operação encontrada!</p>
-</ng-template>
+  <ng-template #listavazia>
+    <p class="titulo">Nenhuma operação encontrada!</p>
+  </ng-template>
+</section>

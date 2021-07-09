@@ -24,7 +24,7 @@ export class TransferenciaService {
   }
 
   dataTransferencia(transferencia: any) {
-    transferencia.date = new Date();
+    transferencia.data = new Date();
   }
 
   todas(): Observable<Transferencia[]> {
